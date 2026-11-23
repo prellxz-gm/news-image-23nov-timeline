@@ -162,7 +162,7 @@ rows = [
      "Reuters", "REPORTED"),
     ("NEW DELHI", "Nepal-India deal: 350 MW power import, new train, joint vision",
      "The Hindu", "REPORTED"),
-    ("09:00 CET", "Australia PMI 46.1, fastest contraction since 2021",
+    ("SYDNEY", "Australia PMI 46.1, fastest contraction since 2021",
      "S&P Global", "CONFIRMED"),
     ("WELLINGTON", "India v NZ Test ends in a draw: NZ 239/5 bat out Day 5",
      "ESPNcricinfo", "CONFIRMED"),
