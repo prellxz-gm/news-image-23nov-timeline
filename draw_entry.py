@@ -3,7 +3,7 @@
 Own drawing code (PIL). 1024x1024 newspaper front page: timeline of Monday
 23 November 2026, Asia morning -> US evening, with a PROOF column
 (source + time + certainty tag) on every story. All stories from the
-verified round-1 story list only; trap-list items appear ONLY in the
+verified round-1 + round-2 story lists only; trap-list items appear ONLY in the
 DATE CHECK box as explicitly NOT 23 November.
 """
 from PIL import Image, ImageDraw, ImageFont
@@ -106,8 +106,8 @@ d.text((W // 2, 252), "1 Brussels   2 Armenia   3 New Delhi   4 Wellington   5 K
 d.text((M, 276), "THE DAY'S THREE BIGGEST STORIES", font=F(SANS_B, 17), fill=NAVY)
 heroes = [
     dict(x=M, icon="plane", kick="BELGIUM STOPS",
-         head="National strike grounds almost all flights",
-         body="Air traffic halted 07:00-21:00. Brussels Airport cancels most of 429 flights.",
+         head="National strike grounds ALL flights",
+         body="Air traffic halted 07:00-21:00. All 429 Brussels flights cancelled, 59,500 hit.",
          src="eTurboNews / StrikeTracker", time="07:00 CET", tag="CONFIRMED"),
     dict(x=M + 326, icon="road", kick="THE TRUMP CORRIDOR OPENS",
          head="Armenia launches TRIPP on Iran's border",
@@ -115,7 +115,7 @@ heroes = [
          src="Fox News", time="MONDAY", tag="CONFIRMED"),
     dict(x=M + 652, icon="chart", kick="WALL ST BOUNCES",
          head="US futures rally after worst week since April 2025",
-         body="S&P futures +1%, Nasdaq +2%. Last week: S&P -8.6%, Nasdaq -10%.",
+         body="S&P futures +2%, Nasdaq +2.5-3% in Asia. Last week: S&P -8.6%, Nasdaq -10%.",
          src="Reuters", time="MONDAY OPEN", tag="REPORTED"),
 ]
 for h in heroes:
@@ -158,14 +158,14 @@ d.text((M, 494), "THE DAY, HOUR BY HOUR  —  ASIA MORNING  ↓  TO US EVENING",
        font=F(SANS_B, 16), fill=NAVY)
 d.line([M + 8, 520, M + 8, 790], fill=RED, width=3)
 rows = [
-    ("ASIA AM", "Asia acts first: Taiwan bans short-selling; China cuts margin rules",
+    ("ASIA AM", "Asia closes split: KOSPI -3.6% to 4,696; TAIEX +2.9% to 37,085",
      "Reuters", "REPORTED"),
-    ("NEW DELHI", "Nepal PM Balendra Shah meets Modi: floods, energy, trade",
-     "IANS", "CONFIRMED"),
-    ("09:00 CET", "Flash PMI day: Europe, UK and US release November surveys",
-     "Morningstar", "FORECAST"),
-    ("WELLINGTON", "India v NZ, final day: NZ 119/2, still 233 behind, 8 wickets left",
-     "ESPNcricinfo", "ONGOING"),
+    ("NEW DELHI", "Nepal-India deal: 350 MW power import, new train, joint vision",
+     "The Hindu", "REPORTED"),
+    ("09:00 CET", "Australia PMI 46.1, fastest contraction since 2021",
+     "S&P Global", "CONFIRMED"),
+    ("WELLINGTON", "India v NZ Test ends in a draw: NZ 239/5 bat out Day 5",
+     "ESPNcricinfo", "CONFIRMED"),
     ("KOUROU", "Ariane 6 launches 36 Amazon Leo satellites from French Guiana",
      "Arianespace", "FORECAST"),
     ("20:15 ET", "Monday Night Football: Bengals (7-2) at Washington Commanders",
@@ -187,10 +187,10 @@ also = [
     "U-17 World Cup: 8 matches in Doha — FIFA",
     "CPHIA opens in Addis Ababa — Africa CDC",
     "Samia launches health plan — IPP Media",
-    "Singapore PM Wong lands in W. Sydney — PMO",
+    "COP31 fallout: 'worst COP ever' — CNN",
     "Visegrad PMs meet in Bratislava — Europe Says",
     "Earnings: Agilent, HPE, Zoom — Stockopedia",
-    "Search resumes at Indonesia fire site — sumi.news",
+    "Indonesia confirms 24 dead at Serang fire — Reuters",
     "Japan shut; Cambodia Water Festival — Reuters",
     "UN Palestinian Solidarity Day, NY — UN",
     "Schumer turns 76; Senate race brews — Reuters",
@@ -223,7 +223,7 @@ for item in not23:
 
 # ---------- footer ----------
 d.line([M, 970, W - M, 970], fill=NAVY, width=2)
-d.text((W // 2, 978), "Sources: Reuters  •  Fox News  •  IANS  •  ESPNcricinfo  •  FIFA  •  UN  •  Arianespace  •  Africa CDC  •  Morningstar  •  Stockopedia",
+d.text((W // 2, 978), "Sources: Reuters  •  Fox News  •  The Hindu  •  ESPNcricinfo  •  FIFA  •  UN  •  Arianespace  •  Africa CDC  •  S&P Global  •  Stockopedia",
        font=F(SANS, 12), fill=GREY, anchor="ma")
 d.text((W // 2, 996), "All stories happened or were first reported on Monday 23 November 2026.",
        font=F(SANS_B, 12), fill=NAVY, anchor="ma")
